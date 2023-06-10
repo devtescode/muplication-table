@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./robot.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Time-Table</h1>
+        <input type="text" placeholder="Row" id="rw">
+        <input type="text" placeholder="Column" id="cm"><br>
+        <button onclick="mul()">Multiplication ✖</button>
+        <button onclick="add()">Addiction ➕</button>
+        <button onclick="sub()">Subtraction ➖</button>
+        <button onclick="div()">Division ➗</button>
+        <div id="disp"></div>
+    
+        <script>
+            // for(var i = 1; i<=12; i++){
+            //     // console.log(`box ${i}`);
+            //     for(var j = 1; j<=12; j++){
+            //         console.log(`box ${i} indome ${j}`);
+            //     }
+            // }
+            function mul(){
+                var row = rw.value
+                var Colu = cm.value
+                disp.innerHTML = ""
+                   table  = "<table border='1' style='margin-left: auto;margin-right: auto;'>"
+                        for(var i = 1; i<=row; i++){
+                            table += "<tr>"
+                               // console.log(`${i}`);  
+                                for(var j = 1; j<=Colu; j++){
+                                    // console.log(`${i*1} * ${j} = ${i*j}`);
+                                    // disp.innerHTML += `<table border="2" style="width: 50px;height: 40px;"> <tr> <td><h1>${i*1} * ${j} = ${i*j} </td></tr></h1></table>`
+                                    table += `<td style='border: 2px solid;'><h1>${j} * ${i} = ${j*i}</h1></td>`
+                                
+                                }
+                            table += "</tr>"
+                        }
+                    table += "</table>"
+                disp.innerHTML += table
+
+            }
+            function add(){
+                disp.innerHTML = ""
+                    var row = rw.value
+                    var Colu = cm.value
+                    table = "<table broder='2' style='margin-left: auto;margin-right: auto;'>"
+                        for(var i = 1; i<=row; i++){
+                            table += "<tr>"
+                                // console.log(`${i}`);
+                                for(var j = 1; j<=Colu; j++){
+                                    // console.log(`${i+1} + ${j} = ${i+j}`);
+                                    table += `<td style='border: 2px solid;'><h1>${j} + ${i} = ${i+j} </h1></td>`
+                                }
+                            table += "</tr>"
+                        }
+                    table += "</table>"
+                disp.innerHTML += table
+            }
+            function sub(){
+                disp.innerHTML = ""
+                var row = rw.value
+                var Colu = cm.value
+                    table = "<table broder='2' style='margin-left: auto;margin-right: auto;'>"
+                        for(var i = 1; i<=row; i++){
+                            table += "<tr>"
+                            // console.log(`${i}`);
+                            for(var j = 1; j<=Colu; j++){
+                                // console.log(`${i+1} + ${j} = ${i+j}`);
+                                table += `<td style='border: 2px solid;'><h1>${j} - ${i} = ${j-i} </h1></td>`
+                            } 
+                            table += "</tr>"
+                        }
+                    table += "</table>"
+                disp.innerHTML += table
+            }
+            function div(){
+            disp.innerHTML = ""
+                var row = rw.value
+                var Colu = cm.value
+                table = "<table broder='2' style='margin-left: auto;margin-right: auto;'>"
+                    for(var i = 1; i<=row; i++){
+                        // console.log(`${i}`);
+                        table += "<tr>"
+                            for(var j = 1; j<=Colu; j++){
+                                // console.log(`${i+1} + ${j} = ${i+j}`);
+                                table += `<td style='border: 2px solid;'><h1 >${j} / ${i} = ${(j/i).toFixed(2)} </h1></td>`
+                                }
+                        table += "<tr>"
+                        }
+                table += "</table>"
+            disp.innerHTML += table 
+            }
+        </script>
+    </body>
+</html>
